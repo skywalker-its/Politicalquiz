@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="author" content="tamrol077">
+  <meta name="description" content="A simple politics quiz app in which you can find out whats your ideology.">
+  <meta name="keywords" content="politics, javascript, basic-project, project, github, html, css, js, political-compass">
+  <meta name="application-name" content="Politics Quiz App.">
+  <link href="styles.css" rel="stylesheet">
+  <script defer src="script.js"></script>
+  <title>Politics Quiz App</title>
+</head>
+<body>
+  <div class="container">
+    <div id="question-container" class="hide">
+      <div id="question">Question</div>
+      <div id="answer-buttons" class="btn-grid">
+        <button class="btn">Answer 1</button>
+        <button class="btn">Answer 2</button>
+        <button class="btn">Answer 3</button>
+        <button class="btn">Answer 4</button>
+      </div>
+    </div>
+    <div class="controls">
+      <button id="start-btn" class="start-btn btn">Start</button>
+      <button id="next-btn" class="next-btn btn hide">Next</button>
+      <button id="finish-btn" class="finish-btn btn hide">Finish</button>
+    </div>
+  </div>
+  <div class="ideologies">
+    <div class="communism hide" id="communism">
+      <p id="text-communism">Dear user, your nearest match is: Leftism. Unfortunatelly I cant give more details besides that because this program is very simple.</p>
+      <img style="width:100px;" src="https://www.debatingeurope.eu/wp-content/uploads/2013/08/communism.png">
+    </div>
+    <div class="centrism hide" id="centrism">
+      <p id="text-centrism">Dear user, your nearest match is: Centrism. Unfortunatelly I cant give more details besides that because this program is very simple.</p>
+      <img style="width:100px;" src="https://i.redd.it/u922j84fl6p31.png">
+    </div>
+    <div class="right hide" id="right">
+      <p id="text-right">Dear user, your nearest match is: Authoritarian right. Unfortunatelly I cant give more details besides that because this program is very simple.</p>
+      <img style="width:100px;" src="https://i2-prod.mirror.co.uk/incoming/article2265266.ece/alternates/s615/Augusto-Pinochet.jpg">
+    </div>
+  </div>
+  <br>
+  <hr>
+  <footer>
+    <p style="color: white;"> Politics Quiz App created by : tamrol077(on github), tamrol073#6998 on discord.</p>
+  </footer>
+  <br>
+</body>
+</html>
