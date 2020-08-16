@@ -36,6 +36,11 @@ body.wrong {
   border-radius: 5px;
   padding: 10px;
   box-shadow: 0 0 10px 2px;
+  display: flex;
+  position: absolute;
+  left: 60%
+  justify-content: center;
+  align-items: center;
 }
 
 .btn-grid {
@@ -96,7 +101,23 @@ footer{
 
 }
 
+.communism{
+  background-color: grey;
+  border: 5px black solid;
+  border-radius: 5px;
+}
 
-@media screen and (max-width: 800px){
+.centrism{
+  background-color: grey;
+  border: 5px black solid;
+  border-radius: 5px;
+  align-items: center;
+  padding: 5px;
+  margin: 5px;
+}
 
+.right{
+  background-color: grey;
+  border: 5px black solid;
+  border-radius: 5px;
 }
