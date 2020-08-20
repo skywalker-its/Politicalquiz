@@ -18,12 +18,20 @@ nextButton.addEventListener('click', () => {
 })
 
 function seeIdeology() {
-  if (benito > 0) {
+  if (benito > 20) {
     right.classList.remove("hide")
-    } else if (benito < 0) {
-    leftism.classList.remove("hide")
+  } else if (benito < -20) {
+    maoism.classList.remove("hide")
   } else if (benito == 0) {
     centrism.classList.remove("hide")
+  } else if (benito > 0 && benito < 10) {
+    strasserism.classList.remove("hide")
+  } else if (benito >= 10 && benito < 20) {
+    fascism.classList.remove("hide")
+  } else if (benito < 0 && benito > -10) {
+    nazbol.classList.remove("hide")
+  } else if (benito < 0) {
+    communism.classList.remove("hide")
   }
 }
 
@@ -84,6 +92,7 @@ function selectAnswer(e) {
 const questions = [
   {
     question: 'What is your opinion on free healthcare?',
+    id : 1,
     answers: [
       { text: 'Strongly Agree', value: -8 },
       { text: 'Agree', value: -5 },
@@ -93,6 +102,7 @@ const questions = [
   },
   {
     question: 'What is your opinion on KKK?',
+    id : 2,
     answers: [
       { text: 'Strongly Agree', value: 8 },
       { text: 'Agree', value: 5 },
@@ -102,6 +112,7 @@ const questions = [
   },
   {
     question: 'What is better between: Strasserism and Nazism?',
+    id : 3,
     answers: [
       { text: 'Nazism', value: 5 },
       { text: 'Strasserism', value: -5 }
@@ -109,6 +120,7 @@ const questions = [
   },
   {
     question: 'What is better between: Mao-Tse-Tung and Deng xiaoping?',
+    id : 4,
     answers: [
       { text: 'Deng', value: 5 },
       { text: 'Mao', value: -5 }
@@ -116,6 +128,7 @@ const questions = [
   },
   {
     question: 'What do you think about socialism?',
+    id : 5,
     answers: [
       { text: 'Very bad ideology', value: 8 },
       { text: 'Bad Ideology or meh', value: 5 },
@@ -125,6 +138,7 @@ const questions = [
   },
   {
     question: 'What do you think about Thomas sankara?',
+    id : 6,
     answers: [
       { text: 'Very good', value: -8 },
       { text: 'Good', value: -5 },
@@ -134,6 +148,7 @@ const questions = [
   },
   {
     question: 'What do you think about Gaddafi?',
+    id : 7,
     answers: [
       { text: 'Very bad', value: 8 },
       { text: 'Bad', value: 5 },
@@ -143,6 +158,7 @@ const questions = [
   },
   {
     question: 'What do you think about Falangism?',
+    id : 8,
     answers: [
       { text: 'Very bad', value: -8 },
       { text: 'Bad', value: -5 },
@@ -152,6 +168,7 @@ const questions = [
   },
   {
     question: 'What do you think about Fascism?',
+    id : 9,
     answers: [
       { text: 'Very bad', value: -8 },
       { text: 'Bad', value: -5 },
@@ -161,6 +178,7 @@ const questions = [
   },
   {
     question: 'What do you think about gender equality?',
+    id : 10,
     answers: [
       { text: 'Very good', value: -8 },
       { text: 'Good', value: -5 },
