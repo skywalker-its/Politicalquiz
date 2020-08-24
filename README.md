@@ -19,6 +19,7 @@ This is a simple program that will guess your political ideology based on your a
 It was partly inspired by 8values, but obviously it is less complex, different and it is made to measure the ideology more than ideological values.
 
 Licensed under [MIT](LICENSE)
+Program version: 1.2.3
 
 
 
