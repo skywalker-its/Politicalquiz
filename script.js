@@ -37,9 +37,9 @@ function totalitarian() {
 function seeIdeology() {
   if (authoritarian > 0) {
     totalitarian()
-    if (benito > 20) {
+    if (benito >= 20) {
       right.classList.remove("hide")
-    } else if (benito < -20) {
+    } else if (benito <= -20) {
       maoism.classList.remove("hide")
     } else if (benito == 0) {
       centrism.classList.remove("hide")
@@ -54,9 +54,9 @@ function seeIdeology() {
     }
   } else if (authoritarian < 0) {
     libertarian()
-    if (benito > 20) {
+    if (benito >= 20) {
       ancap.classList.remove("hide")
-    } else if (benito < -20) {
+    } else if (benito <= -20) {
       maoism.classList.remove("hide")
     } else if (benito == 0) {
       centrism.classList.remove("hide")
@@ -70,9 +70,9 @@ function seeIdeology() {
       ancom.classList.remove("hide")
     }
   } else {
-    if (benito > 20) {
+    if (benito >= 20) {
       right.classList.remove("hide")
-    } else if (benito < -20) {
+    } else if (benito <= -20) {
       maoism.classList.remove("hide")
     } else if (benito == 0) {
       centrism.classList.remove("hide")
