@@ -145,3 +145,31 @@ footer{
   border: 5px black solid;
   border-radius: 5px;
 }
+
+.ancap{
+  background-color: grey;
+  border: 5px black solid;
+  border-radius: 5px;
+}
+
+.anfasc{
+  background-color: grey;
+  border: 5px black solid;
+  border-radius: 5px;
+}
+
+.ancom{
+  background-color: grey;
+  border: 5px black solid;
+  border-radius: 5px;
+}
+
+.logo{
+  border: 5px grey solid;
+  border-radius: 5px;
+  display:flex;
+  align-items: center;
+  position: absolute;
+  top: 5%;
+
+}
