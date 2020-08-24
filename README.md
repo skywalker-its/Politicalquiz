@@ -5,7 +5,12 @@ A simple javascript political test to test your political ideology and beliefs.
 The test will have 15 questions, and depending by your answers it will determine your ideology choosing from a list of various ideologies.
 It will also determine if youre more authoritarian or libertarian.
 
-![Program_Screenshot](imgs/maoism.png)
+![Program_Screenshot](imgs/program_screenshots/Program_screenshot1.PNG)
+
+---
+
+
+![Program_Screenshot](imgs/program_screenshots/Program_screenshot2.PNG)
 
 #### What is this project about?
 
