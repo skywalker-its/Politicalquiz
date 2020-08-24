@@ -17,12 +17,16 @@ nextButton.addEventListener('click', () => {
   setNextQuestion()
 })
 
+//Function to change the ideologies in case of libertarian results.
+
 function libertarian() {
   document.getElementById("text-centrism").innerHTML = "Dear user, your nearest match is: Libertarian Centrism. Unfortunatelly I cant give more details besides that because this program is very simple."
   document.getElementById("text-nazbol").innerHTML = "Dear user, your nearest match is: Libertarian Nazbol. Unfortunatelly I cant give more details besides that because this program is very simple."
   document.getElementById("text-strasserism").innerHTML = "Dear user, your nearest match is: Libertarian Strasserist. Unfortunatelly I cant give more details besides that because this program is very simple."
   document.getElementById("text-maoism").innerHTML = "Dear user, your nearest match is: Libertarian Maoist. Unfortunatelly I cant give more details besides that because this program is very simple."
 }
+
+//Function to change the ideologies in case of authoritarian results.
 
 function totalitarian() {
   document.getElementById("text-communism").innerHTML = "Dear user, your nearest match is: Authoritarian Left. Unfortunatelly I cant give more details besides that because this program is very simple."
@@ -34,57 +38,49 @@ function totalitarian() {
   document.getElementById("text-maoism").innerHTML = "Dear user, your nearest match is: Authoritarian Maoist. Unfortunatelly I cant give more details besides that because this program is very simple."
 }
 
+function checkIdeology() {
+  if (ideologyPoints >= 20) {
+    right.classList.remove("hide")
+  } else if (ideologyPoints <= -20) {
+    maoism.classList.remove("hide")
+  } else if (ideologyPoints == 0) {
+    centrism.classList.remove("hide")
+  } else if (ideologyPoints > 0 && ideologyPoints < 10) {
+    strasserism.classList.remove("hide")
+  } else if (ideologyPoints >= 10 && ideologyPoints < 20) {
+    fascism.classList.remove("hide")
+  } else if (ideologyPoints < 0 && ideologyPoints > -10) {
+    nazbol.classList.remove("hide")
+  } else if (ideologyPoints < 0) {
+    communism.classList.remove("hide")
+  }
+}
+
+//Function to get your ideology once youre finished with the test.
+
 function seeIdeology() {
   if (authoritarian > 0) {
     totalitarian()
-    if (benito >= 20) {
-      right.classList.remove("hide")
-    } else if (benito <= -20) {
-      maoism.classList.remove("hide")
-    } else if (benito == 0) {
-      centrism.classList.remove("hide")
-    } else if (benito > 0 && benito < 10) {
-      strasserism.classList.remove("hide")
-    } else if (benito >= 10 && benito < 20) {
-      fascism.classList.remove("hide")
-    } else if (benito < 0 && benito > -10) {
-      nazbol.classList.remove("hide")
-    } else if (benito < 0) {
-      communism.classList.remove("hide")
-    }
+    checkIdeology()
   } else if (authoritarian < 0) {
     libertarian()
-    if (benito >= 20) {
+    if (ideologyPoints >= 20) {
       ancap.classList.remove("hide")
-    } else if (benito <= -20) {
+    } else if (ideologyPoints <= -20) {
       maoism.classList.remove("hide")
-    } else if (benito == 0) {
+    } else if (ideologyPoints == 0) {
       centrism.classList.remove("hide")
-    } else if (benito > 0 && benito < 10) {
+    } else if (ideologyPoints > 0 && ideologyPoints < 10) {
       strasserism.classList.remove("hide")
-    } else if (benito >= 10 && benito < 20) {
+    } else if (ideologyPoints >= 10 && ideologyPoints < 20) {
       anfasc.classList.remove("hide")
-    } else if (benito < 0 && benito > -10) {
+    } else if (ideologyPoints < 0 && ideologyPoints > -10) {
       nazbol.classList.remove("hide")
-    } else if (benito < 0) {
+    } else if (ideologyPoints < 0) {
       ancom.classList.remove("hide")
     }
   } else {
-    if (benito >= 20) {
-      right.classList.remove("hide")
-    } else if (benito <= -20) {
-      maoism.classList.remove("hide")
-    } else if (benito == 0) {
-      centrism.classList.remove("hide")
-    } else if (benito > 0 && benito < 10) {
-      strasserism.classList.remove("hide")
-    } else if (benito >= 10 && benito < 20) {
-      fascism.classList.remove("hide")
-    } else if (benito < 0 && benito > -10) {
-      nazbol.classList.remove("hide")
-    } else if (benito < 0) {
-      communism.classList.remove("hide")
-    }
+    checkIdeology()
   }
 }
 
@@ -125,53 +121,39 @@ function resetState() {
   }
 }
 
-var benito = 0;
+var ideologyPoints = 0;
 var authoritarian = 0;
+
+function social_test(e) {
+  const selectedButton = e.target
+  const value = Number(selectedButton.dataset.value);
+  salve = authoritarian + value;
+  authoritarian = salve;
+  console.log(authoritarian);
+  questionContainerElement.classList.add("hide")
+  if (shuffledQuestions.length > currentQuestionIndex + 1) {
+    nextButton.classList.remove('hide')
+  } else {
+    finishButton.classList.remove("hide")
+  }
+}
 
 function selectAnswer(e) {
 
   if (shuffledQuestions[currentQuestionIndex].id === 11) {
-    const selectedButton = e.target
-    const value = Number(selectedButton.dataset.value);
-    salve = authoritarian + value;
-    authoritarian = salve;
-    console.log(authoritarian);
-    questionContainerElement.classList.add("hide")
-    if (shuffledQuestions.length > currentQuestionIndex + 1) {
-      nextButton.classList.remove('hide')
-    } else {
-      finishButton.classList.remove("hide")
-    }
+    social_test(e)
   } else if (shuffledQuestions[currentQuestionIndex].id === 12) {
-    const selectedButton = e.target
-    const value = Number(selectedButton.dataset.value);
-    salve = authoritarian + value;
-    authoritarian = salve;
-    console.log(authoritarian);
-    questionContainerElement.classList.add("hide")
-    if (shuffledQuestions.length > currentQuestionIndex + 1) {
-      nextButton.classList.remove('hide')
-    } else {
-      finishButton.classList.remove("hide")
-    }
+    social_test(e)
   } else if (shuffledQuestions[currentQuestionIndex].id === 13) {
-    const selectedButton = e.target
-    const value = Number(selectedButton.dataset.value);
-    salve = authoritarian + value;
-    authoritarian = salve;
-    console.log(authoritarian);
-    questionContainerElement.classList.add("hide")
-    if (shuffledQuestions.length > currentQuestionIndex + 1) {
-      nextButton.classList.remove('hide')
-    } else {
-      finishButton.classList.remove("hide")
-    }
+    social_test(e)
+  } else if (shuffledQuestions[currentQuestionIndex].id === 19) {
+    social_test(e)
   } else {
     const selectedButton = e.target
     const value = Number(selectedButton.dataset.value);
-    salve = benito + value;
-    benito = salve;
-    console.log(benito);
+    salve = ideologyPoints + value;
+    ideologyPoints = salve;
+    console.log(ideologyPoints);
     questionContainerElement.classList.add("hide")
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
       nextButton.classList.remove('hide')
@@ -312,4 +294,71 @@ const questions = [
       { text: 'Very Bad', social_value: -8  }
     ]
   },
+  {
+    question: 'What do you think about the soviet Union?',
+    id : 14,
+    answers: [
+      { text: 'Very good', value: -8 },
+      { text: 'Good', value: -5 },
+      { text: 'Neutral/Unsure', value: -5 },
+      { text: 'Bad', value: 5 },
+      { text: 'Very Bad', value: 8 }
+    ]
+  },
+  {
+    question: 'You think that the corporations are a peril?',
+    id : 15,
+    answers: [
+      { text: 'Absolutely', value: -8 },
+      { text: 'Yes', value: -5 },
+      { text: 'Neutral/Unsure', value: -5 },
+      { text: 'No', value: 5 },
+      { text: 'Not at all', value: 8 }
+    ]
+  },
+  {
+    question: 'You think that immigrants are good?',
+    id : 16,
+    answers: [
+      { text: 'Absolutely', value: -8 },
+      { text: 'Yes', value: -5 },
+      { text: 'Neutral/Unsure', value: -5 },
+      { text: 'No', value: 5 },
+      { text: 'Not at all', value: 8 }
+    ]
+  },
+  {
+    question: 'You think that the wealth should be redistributed?',
+    id : 17,
+    answers: [
+      { text: 'Absolutely', value: -8 },
+      { text: 'Yes', value: -5 },
+      { text: 'Neutral/Unsure', value: -5 },
+      { text: 'No', value: 5 },
+      { text: 'Not at all', value: 8 }
+    ]
+  },
+  {
+    question: 'You think that the rich should be executed?',
+    id : 18,
+    answers: [
+      { text: 'Absolutely', value: -8 },
+      { text: 'Yes', value: -5 },
+      { text: 'Neutral/Unsure', value: -5 },
+      { text: 'No', value: 5 },
+      { text: 'Not at all', value: 8 }
+    ]
+  },
+  {
+    question: 'You think that the state is crushing your liberty?',
+    id : 19,
+    answers: [
+      { text: 'Absolutely', social_value: -8  },
+      { text: 'Yes', social_value: -8 },
+      { text: 'Neutral/Unsure', social_value: -8  },
+      { text: 'No', social_value: -8  },
+      { text: 'Not at all', social_value: -8  }
+    ]
+  },
+
 ]
