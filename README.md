@@ -2,7 +2,7 @@
 ---
 
 A simple javascript political test to test your political ideology and beliefs.
-The test will have 15 questions, and depending by your answers it will determine your ideology choosing from a list of various ideologies.
+The test will have 20 questions, and depending by your answers it will determine your ideology choosing from a list of various ideologies.
 It will also determine if youre more authoritarian or libertarian.
 
 ![Program_Screenshot](imgs/program_screenshots/Program_screenshot1.PNG)
@@ -21,7 +21,7 @@ It was partly inspired by 8values, but obviously it is less complex, different a
 Licensed under [MIT](LICENSE)
 
 
-Program version: 1.2.3
+Program version: 1.2.4
 
 
 
